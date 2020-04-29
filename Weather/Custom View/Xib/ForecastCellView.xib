@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForecastCellView" customModule="Weather" customModuleProvider="target">
+            <connections>
+                <outlet property="shortInfoLabel" destination="G4A-RH-z6g" id="MKb-3X-j5R"/>
+                <outlet property="temperatureLabel" destination="CRm-TW-cNS" id="nq1-Qf-R4P"/>
+                <outlet property="timeLabel" destination="cQy-ZD-cJn" id="9RH-4P-VgL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cId-i9-MVQ">
+                    <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRm-TW-cNS">
+                            <rect key="frame" x="52.5" y="15" width="35" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="83i-W9-tnA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Солнечно" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4A-RH-z6g">
+                            <rect key="frame" x="34.5" y="98" width="71" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQy-ZD-cJn">
+                            <rect key="frame" x="50.5" y="75" width="39" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="CRm-TW-cNS" firstAttribute="top" secondItem="cId-i9-MVQ" secondAttribute="top" constant="15" id="0ff-mV-ztD"/>
+                        <constraint firstItem="cQy-ZD-cJn" firstAttribute="top" secondItem="CRm-TW-cNS" secondAttribute="bottom" constant="10" id="0s0-DI-lmq"/>
+                        <constraint firstAttribute="height" constant="140" id="EHN-vE-JE7"/>
+                        <constraint firstAttribute="width" constant="140" id="H9g-fc-KVb"/>
+                        <constraint firstItem="G4A-RH-z6g" firstAttribute="top" secondItem="cQy-ZD-cJn" secondAttribute="bottom" constant="5" id="Kai-5r-B3N"/>
+                        <constraint firstItem="CRm-TW-cNS" firstAttribute="centerX" secondItem="cId-i9-MVQ" secondAttribute="centerX" id="Q5g-1d-1Fq"/>
+                        <constraint firstItem="G4A-RH-z6g" firstAttribute="centerX" secondItem="cId-i9-MVQ" secondAttribute="centerX" id="Tcx-MJ-vch"/>
+                        <constraint firstItem="cQy-ZD-cJn" firstAttribute="centerX" secondItem="cId-i9-MVQ" secondAttribute="centerX" id="u1R-ao-PGa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="cId-i9-MVQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="347-g2-HYq"/>
+                <constraint firstAttribute="trailing" secondItem="cId-i9-MVQ" secondAttribute="trailing" id="AET-Ux-vN5"/>
+                <constraint firstItem="cId-i9-MVQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="O3d-fJ-yw5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cId-i9-MVQ" secondAttribute="bottom" id="ycA-cP-u7k"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="135"/>
+        </view>
+    </objects>
+</document>

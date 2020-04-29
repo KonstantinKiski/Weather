@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SunView">
+            <connections>
+                <outlet property="imageSun" destination="kw1-oo-xka" id="iPM-f1-pdm"/>
+                <outlet property="timeSun" destination="RZt-7d-N64" id="rf8-il-8fc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgh-mL-xlb" userLabel="Sun View">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunset" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kw1-oo-xka">
+                            <rect key="frame" x="12.5" y="56.5" width="25" height="24.5"/>
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="bpx-Vt-shW"/>
+                                <constraint firstAttribute="width" constant="25" id="btS-OZ-18D"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZt-7d-N64">
+                            <rect key="frame" x="0.0" y="83" width="50" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="RZt-7d-N64" secondAttribute="trailing" id="F0v-gq-ErS"/>
+                        <constraint firstItem="RZt-7d-N64" firstAttribute="top" secondItem="kw1-oo-xka" secondAttribute="bottom" id="V5B-Wt-WRG"/>
+                        <constraint firstAttribute="bottom" secondItem="RZt-7d-N64" secondAttribute="bottom" id="WQp-jH-sfx"/>
+                        <constraint firstAttribute="width" constant="50" id="Xnj-hi-jdC"/>
+                        <constraint firstItem="RZt-7d-N64" firstAttribute="leading" secondItem="Fgh-mL-xlb" secondAttribute="leading" id="fbJ-2K-pSw"/>
+                        <constraint firstAttribute="height" constant="100" id="knP-va-Bga"/>
+                        <constraint firstItem="kw1-oo-xka" firstAttribute="centerX" secondItem="Fgh-mL-xlb" secondAttribute="centerX" id="uhh-ST-av0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="Fgh-mL-xlb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7JK-1U-E7M"/>
+                <constraint firstAttribute="bottom" secondItem="Fgh-mL-xlb" secondAttribute="bottom" id="JAD-oa-an1"/>
+                <constraint firstItem="Fgh-mL-xlb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VGK-nE-csF"/>
+                <constraint firstAttribute="trailing" secondItem="Fgh-mL-xlb" secondAttribute="trailing" id="jL2-bU-0YX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="sunset" catalog="system" width="128" height="97"/>
+    </resources>
+</document>

@@ -30,8 +30,8 @@ struct MainWeather: Codable {
     var seaLevel: Double?
     var grndLevel: Double?
     var tempCelsius: Double {
-        if let fahrenheit = temp {
-            return (fahrenheit-32.0)/1.8
+        if let kelvin = temp {
+            return kelvin - 273.15
         }
         return temp ?? 0.0
     }
@@ -48,6 +48,7 @@ struct Clouds: Codable {
 
 struct SystemMessage: Codable {
     var message: Double?
+    var type: Int?
     var country: String?
     var sunrise: Double?
     var sunset: Double?
@@ -73,10 +74,11 @@ class DetailWeather: Codable {
     var dateTxt: Date?
     var base: String?
     var wind: Wind?
+    var visibility: Int?
     var clouds: Clouds?
     var systemMessage: SystemMessage?
     var mainWeather: MainWeather?
-    var shortWeather: ShortWeather?
+    var shortWeather: [ShortWeather]?
     var coordinations: Coordinations?
     var cod: Int?
     var date: Date {
@@ -87,8 +89,8 @@ class DetailWeather: Codable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case id, cityName  = "name", unixDate = "dt", base, wind, clouds, systemMessage = "sys"
-        case mainWeather = "main", shortWeather = "weather", coordinations = "coord", cod, dateTxt = "dt_txt"
+        case id, base, wind, clouds, visibility, cod
+        case cityName  = "name", unixDate = "dt", systemMessage = "sys", mainWeather = "main", shortWeather = "weather", coordinations = "coord", dateTxt = "dt_txt"
     }
     
     required convenience init(from decoder: Decoder) throws {
@@ -101,9 +103,10 @@ class DetailWeather: Codable {
         self.wind = try? container.decode(Wind.self, forKey: .wind)
         self.clouds = try? container.decode(Clouds.self, forKey: .clouds)
         self.cod = try? container.decode(Int.self, forKey: .cod)
+        self.visibility = try? container.decode(Int.self, forKey: .visibility)
         self.systemMessage = try? container.decode(SystemMessage.self, forKey: .systemMessage)
         self.mainWeather = try? container.decode(MainWeather.self, forKey: .mainWeather)
-        self.shortWeather = try? container.decode(ShortWeather.self, forKey: .shortWeather)
+        self.shortWeather = try? container.decode([ShortWeather].self, forKey: .shortWeather)
         self.coordinations = try? container.decode(Coordinations.self, forKey: .coordinations)
     }
 }

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceholderView" customModule="Weather" customModuleProvider="target">
+            <connections>
+                <outlet property="errorView" destination="CIz-ky-van" id="YYq-ly-fUM"/>
+                <outlet property="loaderView" destination="LF9-s0-UyX" id="PAW-qR-KOb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="140"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIz-ky-van" userLabel="Error View">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="140"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhB-vf-iU5">
+                            <rect key="frame" x="16" y="64" width="218" height="40"/>
+                            <color key="backgroundColor" red="0.37735445210000002" green="0.5" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="CMN-xX-Fgq"/>
+                            </constraints>
+                            <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Повторить попытку"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="retryButton:" destination="-1" eventType="touchUpInside" id="uEo-6z-7kK"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Произошла ошибка.                Проверьте ваше подключение." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwG-pB-nSQ">
+                            <rect key="frame" x="16" y="25" width="218" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="UwG-pB-nSQ" firstAttribute="top" secondItem="CIz-ky-van" secondAttribute="top" constant="25" id="GcX-ZY-WVd"/>
+                        <constraint firstAttribute="width" constant="250" id="Jjk-ws-4Fe"/>
+                        <constraint firstItem="XhB-vf-iU5" firstAttribute="top" secondItem="UwG-pB-nSQ" secondAttribute="bottom" constant="10" id="Lai-w3-7Pa"/>
+                        <constraint firstItem="UwG-pB-nSQ" firstAttribute="leading" secondItem="CIz-ky-van" secondAttribute="leading" constant="16" id="Oeq-T4-9VJ"/>
+                        <constraint firstAttribute="trailing" secondItem="XhB-vf-iU5" secondAttribute="trailing" constant="16" id="dFU-EL-u85"/>
+                        <constraint firstAttribute="trailing" secondItem="UwG-pB-nSQ" secondAttribute="trailing" constant="16" id="fCe-fJ-kCa"/>
+                        <constraint firstItem="XhB-vf-iU5" firstAttribute="leading" secondItem="CIz-ky-van" secondAttribute="leading" constant="16" id="iuL-u0-GEc"/>
+                        <constraint firstAttribute="height" constant="140" id="ut8-Sb-gTm"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LF9-s0-UyX" customClass="SpinnerView" customModule="Weather" customModuleProvider="target">
+                    <rect key="frame" x="105" y="50" width="40" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="MDD-nV-kfu"/>
+                        <constraint firstAttribute="height" constant="40" id="XWa-8F-ahW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="CIz-ky-van" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Bem-dM-nKv"/>
+                <constraint firstItem="LF9-s0-UyX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NUU-dT-qdE"/>
+                <constraint firstItem="CIz-ky-van" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SQM-6C-3Wt"/>
+                <constraint firstItem="LF9-s0-UyX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rZl-CB-Mnk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="135"/>
+        </view>
+    </objects>
+</document>

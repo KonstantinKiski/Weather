@@ -17,14 +17,15 @@ struct City: Codable {
 
 class Forecast: Codable {
     
-    var cod: Int!
+    var cod: Int?
     var message: String?
     var cnt: Int?
     var city: City?
     var hoursList: [DetailWeather]?
     
     private enum CodingKeys: String, CodingKey {
-        case cod, message, cnt, city, hoursList = "list"
+        case cod, message, cnt, city
+        case hoursList = "list"
     }
     
     required convenience init(from decoder: Decoder) throws {
