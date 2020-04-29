@@ -13,8 +13,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        getWeather()
     }
 
 
+    func getWeather() {
+        NetworkManager.Weather.getDetailWeather(cityId: 479123)  { weather, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            print(weather?.cityName ??  "")
+        }
+    }
 }
 

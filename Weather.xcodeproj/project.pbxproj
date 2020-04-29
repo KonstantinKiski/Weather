@@ -3,20 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEAA5C29245975E900C7DC5E /* DetailWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAA5C28245975E900C7DC5E /* DetailWeather.swift */; };
 		AECF068924596EDA001BF6D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECF068824596EDA001BF6D2 /* AppDelegate.swift */; };
 		AECF068B24596EDA001BF6D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECF068A24596EDA001BF6D2 /* SceneDelegate.swift */; };
 		AECF068D24596EDA001BF6D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECF068C24596EDA001BF6D2 /* ViewController.swift */; };
 		AECF069024596EDA001BF6D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AECF068E24596EDA001BF6D2 /* Main.storyboard */; };
 		AECF069224596EDB001BF6D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECF069124596EDB001BF6D2 /* Assets.xcassets */; };
 		AECF069524596EDB001BF6D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AECF069324596EDB001BF6D2 /* LaunchScreen.storyboard */; };
+		AEE608CB245970D6007B728D /* WeatherNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE608CA245970D6007B728D /* WeatherNetworking.swift */; };
+		AEE608CE245973C4007B728D /* NetworkingManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE608CD245973C4007B728D /* NetworkingManagerError.swift */; };
+		AEE608D024597429007B728D /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE608CF24597429007B728D /* NetworkingManager.swift */; };
 		BE4910E2ECE7BF43F2F685B0 /* Pods_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A3C394EE85BB2E938F91A8 /* Pods_Weather.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AEAA5C28245975E900C7DC5E /* DetailWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeather.swift; sourceTree = "<group>"; };
 		AECF068524596EDA001BF6D2 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AECF068824596EDA001BF6D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AECF068A24596EDA001BF6D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,6 +30,9 @@
 		AECF069124596EDB001BF6D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AECF069424596EDB001BF6D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AECF069624596EDB001BF6D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEE608CA245970D6007B728D /* WeatherNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworking.swift; sourceTree = "<group>"; };
+		AEE608CD245973C4007B728D /* NetworkingManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerError.swift; sourceTree = "<group>"; };
+		AEE608CF24597429007B728D /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		B3A19E9ABE73500C29BA5117 /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		B9A3C394EE85BB2E938F91A8 /* Pods_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B873784308E4DF655A8A8E /* Pods-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.release.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.release.xcconfig"; sourceTree = "<group>"; };
@@ -48,7 +56,6 @@
 				B3A19E9ABE73500C29BA5117 /* Pods-Weather.debug.xcconfig */,
 				E7B873784308E4DF655A8A8E /* Pods-Weather.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,8 +95,28 @@
 				AECF069124596EDB001BF6D2 /* Assets.xcassets */,
 				AECF069324596EDB001BF6D2 /* LaunchScreen.storyboard */,
 				AECF069624596EDB001BF6D2 /* Info.plist */,
+				AEE608CC245973A3007B728D /* Models */,
+				AEE608C9245970B3007B728D /* Networking */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		AEE608C9245970B3007B728D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AEE608CF24597429007B728D /* NetworkingManager.swift */,
+				AEE608CA245970D6007B728D /* WeatherNetworking.swift */,
+				AEE608CD245973C4007B728D /* NetworkingManagerError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AEE608CC245973A3007B728D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AEAA5C28245975E900C7DC5E /* DetailWeather.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +236,11 @@
 			files = (
 				AECF068D24596EDA001BF6D2 /* ViewController.swift in Sources */,
 				AECF068924596EDA001BF6D2 /* AppDelegate.swift in Sources */,
+				AEE608CB245970D6007B728D /* WeatherNetworking.swift in Sources */,
+				AEE608D024597429007B728D /* NetworkingManager.swift in Sources */,
+				AEAA5C29245975E900C7DC5E /* DetailWeather.swift in Sources */,
 				AECF068B24596EDA001BF6D2 /* SceneDelegate.swift in Sources */,
+				AEE608CE245973C4007B728D /* NetworkingManagerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
