@@ -70,6 +70,7 @@ class DetailWeather: Codable {
     var id: Int!
     var cityName: String?
     var unixDate: Double?
+    var dateTxt: Date?
     var base: String?
     var wind: Wind?
     var clouds: Clouds?
@@ -87,7 +88,7 @@ class DetailWeather: Codable {
 
     private enum CodingKeys: String, CodingKey {
         case id, cityName  = "name", unixDate = "dt", base, wind, clouds, systemMessage = "sys"
-        case mainWeather = "main", shortWeather = "weather", coordinations = "coord", cod
+        case mainWeather = "main", shortWeather = "weather", coordinations = "coord", cod, dateTxt = "dt_txt"
     }
     
     required convenience init(from decoder: Decoder) throws {

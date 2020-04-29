@@ -14,7 +14,7 @@ class WeatherNetworking {
     init() {}
     
     func getDetailWeather(cityId: Int, completion: @escaping (DetailWeather?, NetworkManagerError?) -> Void) {
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?id=\(cityId)&appid=439d4b804bc8187953eb36d2a8c26a02"
+        let urlString = "https://api.openweathermap.org/data/2.5/weather?id=\(cityId)&appid=appid"
         
         AF.request(urlString).response { response in
             guard let data = response.data else { return }
@@ -32,4 +32,25 @@ class WeatherNetworking {
             }
         }
     }
+    
+    
+    func getForecastWeather(cityId: Int, completion: @escaping (Forecast?, NetworkManagerError?) -> Void) {
+        let urlString = "https://api.openweathermap.org/data/2.5/forecast?id=\(cityId)&appid=appid"
+        AF.request(urlString).response { response in
+            guard let data = response.data else { return }
+            do {
+                let decoder = JSONDecoder()
+                let forecast = try decoder.decode(Forecast.self, from: data)
+                
+                if forecast.cod == 200 {
+                    completion(forecast, nil)
+                }
+                completion(nil, NetworkManagerError(kind: .serverIsDown))
+            } catch let error {
+                print(error)
+                completion(nil, error as? NetworkManagerError)
+            }
+        }
+    }
+
 }

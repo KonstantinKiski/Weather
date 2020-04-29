@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AEAA5C29245975E900C7DC5E /* DetailWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAA5C28245975E900C7DC5E /* DetailWeather.swift */; };
+		AEAEB57F24598C3C00EF130A /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAEB57E24598C3C00EF130A /* Forecast.swift */; };
 		AECF068924596EDA001BF6D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECF068824596EDA001BF6D2 /* AppDelegate.swift */; };
 		AECF068B24596EDA001BF6D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECF068A24596EDA001BF6D2 /* SceneDelegate.swift */; };
 		AECF068D24596EDA001BF6D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECF068C24596EDA001BF6D2 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		AEAA5C28245975E900C7DC5E /* DetailWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeather.swift; sourceTree = "<group>"; };
+		AEAEB57E24598C3C00EF130A /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		AECF068524596EDA001BF6D2 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AECF068824596EDA001BF6D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AECF068A24596EDA001BF6D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				AEAA5C28245975E900C7DC5E /* DetailWeather.swift */,
+				AEAEB57E24598C3C00EF130A /* Forecast.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEAEB57F24598C3C00EF130A /* Forecast.swift in Sources */,
 				AECF068D24596EDA001BF6D2 /* ViewController.swift in Sources */,
 				AECF068924596EDA001BF6D2 /* AppDelegate.swift in Sources */,
 				AEE608CB245970D6007B728D /* WeatherNetworking.swift in Sources */,

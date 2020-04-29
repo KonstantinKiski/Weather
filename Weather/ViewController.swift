@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         getWeather()
+        getForecast()
     }
 
 
@@ -25,6 +26,17 @@ class ViewController: UIViewController {
             }
             
             print(weather?.cityName ??  "")
+        }
+    }
+    
+    func getForecast() {
+        NetworkManager.Weather.getForecastWeather(cityId: 479123)  { forecast, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            print(forecast?.city?.name ?? "")
         }
     }
 }
